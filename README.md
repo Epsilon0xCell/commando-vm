@@ -1,6 +1,8 @@
-<p align="center"><img src="banner.png" width="800" alt="Commando VM banner"></p>
+<p align="center"><img src="banner.png" width="680" alt="Commando VM banner"></p>
 
-<p align="center"><img src="logo.png" width="200" alt="Commando VM logo"></p>
+<p align="center"><img src="logo.png" width="120" alt="Commando VM logo"></p>
+
+<p align="center"><img src="https://img.shields.io/badge/Windows-10-0078D6" alt="Windows 10"> <img src="https://img.shields.io/badge/PowerShell-5391FE" alt="PowerShell"> <img src="https://img.shields.io/badge/License-Apache--2.0-blue" alt="License: Apache-2.0"></p>
 
 <img src="assets-scene.svg" alt="The Etched Armory: an etched Windows workstation with a four pane window" width="100%">
 
@@ -72,7 +74,6 @@ To permanently disable Microsoft Defender:
 1. `.\install.ps1` for a GUI install or `.\install.ps1 -cli` for command-line
 
 
-<p align="center"><img src="assets/intro-banner.png" width="800" alt="Commando VM introduction"></p>
 
 ## Contributing
 Looking to contribute? Check the links below to learn how!
@@ -119,3 +120,29 @@ installation, you are accepting the license terms of each package, and
 acknowledging that your use of each package will be subject to its respective
 license terms.
 ```
+
+## Get Started (Summary)
+
+CommandoVM is Mandiant's Windows-based security distribution for penetration testing and red teaming. It is installed by running install.ps1 inside a Windows 10 virtual machine that you deploy yourself. There is no OVA download and no prebuilt VM image in this repository.
+
+| Item | Minimum | Recommended |
+|---|---|---|
+| OS | Windows 10 | Windows 10 22H2 |
+| RAM | 2 GB | 4+ GB |
+| Hard drive | 60 GB | 80+ GB |
+| Network adapters |  | 2 |
+
+Insider Preview editions of Windows 10 are not supported, per the Requirements section above.
+
+Summary of the install sequence given in the body above:
+
+1. Deploy a Windows 10 virtual machine.
+2. Complete the Pre-Install Procedures in the body above, starting with disabling Windows Defender: turn Tamper Protection off first, then use Group Policy, with reboots as directed there.
+3. Download and extract the zip of this repository.
+4. Run PowerShell as Administrator.
+5. Run `Set-ExecutionPolicy Unrestricted -force`.
+6. Change to the extracted folder, for example `cd ~/Downloads/commando-vm`.
+7. Run `Get-ChildItem .\ -Recurse | Unblock-File`.
+8. Run `.\install.ps1` for a GUI install or `.\install.ps1 -cli` for a command line install.
+
+For the full steps, see the Pre-Install Procedures and Installation sections above. Tool packages live in the separate mandiant/VM-Packages repository, linked in the Contributing section above.
