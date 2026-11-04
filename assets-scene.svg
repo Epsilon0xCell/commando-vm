@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="190" viewBox="0 0 800 190" role="img" aria-label="The Etched Armory: an etched Windows workstation, four pane window crossed by a chevron, one red pane">
+<rect width="800" height="190" fill="#f2f3f4"/>
+<g stroke="#9aa3ad" stroke-width="1"><path d="M0 20 H800 M0 50 H800 M0 160 H800"/></g>
+<rect x="290" y="28" width="220" height="118" fill="none" stroke="#111111" stroke-width="3"/>
+<line x1="400" y1="28" x2="400" y2="146" stroke="#111111" stroke-width="2"/><line x1="290" y1="87" x2="510" y2="87" stroke="#111111" stroke-width="2"/>
+<rect x="402" y="30" width="106" height="55" fill="#d7263d" opacity="0.9"><animate attributeName="opacity" values="0.9;0.55;0.9" dur="3s" repeatCount="indefinite"/></rect>
+<path d="M250 118 L400 58 L550 118 L550 136 L400 76 L250 136 Z" fill="none" stroke="#111111" stroke-width="3"/>
+<g stroke="#111111" stroke-width="2"><rect x="90" y="62" width="90" height="64"/><line x1="90" y1="80" x2="180" y2="80"/><rect x="620" y="62" width="90" height="64"/><line x1="620" y1="80" x2="710" y2="80"/></g>
+<g stroke="#9aa3ad" stroke-width="1.5"><path d="M100 96 h70 M100 108 h70 M630 96 h70 M630 108 h70"/></g>
+<line x1="330" y1="162" x2="470" y2="162" stroke="#111111" stroke-width="3"/>
+</svg>

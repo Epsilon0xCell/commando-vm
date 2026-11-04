@@ -1,3 +1,13 @@
+<p align="center"><img src="banner.png" width="800" alt="Commando VM banner"></p>
+
+<p align="center"><img src="logo.png" width="200" alt="Commando VM logo"></p>
+
+<img src="assets-scene.svg" alt="The Etched Armory: an etched Windows workstation with a four pane window" width="100%">
+
+*The Etched Armory: an etched Windows workstation armory, its four pane window crossed by a chevron, one pane in signal red.*
+
+![Separator](sep-light.svg)
+
 ![CommandoLogo](Images/commando-readme.png)
 
 ## What is CommandoVM?
@@ -61,6 +71,8 @@ To permanently disable Microsoft Defender:
 1. `Get-ChildItem .\ -Recurse | Unblock-File`
 1. `.\install.ps1` for a GUI install or `.\install.ps1 -cli` for command-line
 
+
+<p align="center"><img src="assets/intro-banner.png" width="800" alt="Commando VM introduction"></p>
 
 ## Contributing
 Looking to contribute? Check the links below to learn how!
