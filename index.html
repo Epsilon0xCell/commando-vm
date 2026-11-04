@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CommandoVM: Complete Mandiant Offensive VM</title>
+<meta name="description" content="CommandoVM is a Windows based security distribution for penetration testing and red teaming, packaged as a virtual machine.">
+<style>
+@font-face{font-family:'Saira Stencil One';src:url('fonts/SairaStencilOne.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Saira';src:url('fonts/Saira-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Saira';src:url('fonts/Saira-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+:root{--ink:#0d0d0f;--steel:#8a919c;--steel2:#c9ced6;--red:#d92323;--bg:#111214}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--steel2);font-family:'Saira',sans-serif;line-height:1.6;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(138,145,156,.07) 28px)}
+h1,h2{font-family:'Saira Stencil One',sans-serif;font-weight:400;color:#f2f3f5}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:.1em 0;line-height:1.05}
+h2{font-size:1.45rem;border-bottom:1px solid var(--steel);padding-bottom:.3rem}
+a{color:#fff;text-decoration-color:var(--red);text-underline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 4vw 3rem}
+.plate{border:1px solid var(--steel);outline:1px solid rgba(138,145,156,.35);outline-offset:5px;margin-top:1.6rem;padding:1.2rem;background:#16171a}
+.plate img.banner{width:100%;height:auto;display:block;filter:grayscale(.25)}
+.spec{display:flex;gap:1.1rem;align-items:flex-start;margin-top:1.2rem;flex-wrap:wrap}
+.spec img{width:96px;height:96px;object-fit:cover;border:1px solid var(--steel)}
+.rule{height:10px;margin:1.4rem 0;background:repeating-linear-gradient(90deg,var(--steel) 0 14px,transparent 14px 22px);opacity:.6}
+.red{color:var(--red)} .tagline{font-size:1.08rem;max-width:68ch}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #3a3d44;padding:.5rem .7rem;text-align:left}th{color:#fff;background:#1d1e22}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{border:1px solid #3a3d44;padding:1rem 1.1rem;background:#16171a}
+.card h3{margin:.1em 0 .4em;color:#fff;font-family:'Saira Stencil One',sans-serif;font-weight:400}
+pre{background:#0a0a0c;border-left:4px solid var(--red);padding:1rem 1.2rem;overflow-x:auto;color:#e8eaed}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem}
+.btn{display:inline-block;border:1px solid var(--steel);color:#fff;text-decoration:none;padding:.5rem 1.1rem;margin:.2rem .4rem .2rem 0;background:#1d1e22}
+.btn:hover{border-color:var(--red)}
+.note{border-left:4px solid var(--red);padding:.6rem 1rem;background:#1a1214}
+img.wide{width:100%;height:auto;border:1px solid var(--steel)}
+footer{border-top:1px solid #3a3d44;margin-top:2rem;padding-top:1rem;color:var(--steel)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="plate">
+    <img class="banner" src="assets/banner.png" alt="Etched scene: a fortress like Windows workstation with a pegboard of tool silhouettes">
+    <div class="spec">
+      <img src="assets/logo.png" alt="CommandoVM logo: a four pane window crossed by a chevron, one pane in signal red">
+      <div>
+        <p style="margin:0;color:var(--red);letter-spacing:.18em">WINDOWS / VIRTUAL MACHINE / SPECIFICATION</p>
+        <h1>Commando<span class="red">VM</span></h1>
+        <p><a href="https://github.com/Epsilon0xCell/commando-vm">github.com/Epsilon0xCell/commando-vm</a></p>
+      </div>
+    </div>
+    <p class="tagline">Complete Mandiant Offensive VM, or CommandoVM, is a Windows based security distribution for penetration testing and red teaming. It comes packaged with a variety of offensive tools not included in Kali Linux, which point to the use of Windows itself as an attack platform. I hold this upstream project in the fleet as the Windows counterpart in the set: build the virtual machine, then install the toolset onto it with the script in the repo.</p>
+    <p><a class="btn" href="#install">Install steps</a><a class="btn" href="#reqs">Requirements</a><a class="btn" href="https://github.com/Epsilon0xCell/commando-vm">The repo</a></p>
+  </section>
+
+  <div class="rule" role="separator"></div>
+
+  <section id="reqs">
+    <h2>Requirements, as listed in the repo</h2>
+    <div class="grid">
+      <div class="card"><h3>Minimum</h3><table><tr><td>System</td><td>Windows 10</td></tr><tr><td>Hard drive</td><td>60 GB</td></tr><tr><td>RAM</td><td>2 GB</td></tr></table><p>Insider Preview editions of Windows are not supported.</p></div>
+      <div class="card"><h3>Recommended</h3><table><tr><td>System</td><td>Windows 10 22H2</td></tr><tr><td>Hard drive</td><td>80+ GB</td></tr><tr><td>RAM</td><td>4+ GB</td></tr><tr><td>Network</td><td>2 network adapters</td></tr></table></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Install, in order</h2>
+    <p>First deploy a Windows virtual machine. Then complete the pre-install work in the repo README: Windows Defender must be disabled for a smooth install, through Group Policy, and on Windows versions 1909 and higher Tamper Protection must be disabled first, otherwise Group Policy settings are ignored. The README walks through each Group Policy change and the reboots between them. Read that section in full before starting.</p>
+    <pre><code>Set-ExecutionPolicy Unrestricted -force
+cd ~/Downloads/commando-vm
+Get-ChildItem .\ -Recurse | Unblock-File
+.\install.ps1        # GUI install
+.\install.ps1 -cli   # command line install</code></pre>
+    <ol>
+      <li>Complete the pre-install procedures by disabling Defender.</li>
+      <li>Download and extract the zip of the CommandoVM repo.</li>
+      <li>Run PowerShell as Administrator.</li>
+      <li>Set the execution policy, move into the extracted folder, and unblock the files, as shown above.</li>
+      <li>Run install.ps1 for a GUI install, or install.ps1 -cli for a command line install.</li>
+    </ol>
+    <p class="note">Legal note from the repo: installation and use of this script is subject to the Apache 2.0 License, and each downloaded or installed package carries its own license terms, which the user must review and accept. See License.txt in the repo.</p>
+  </section>
+
+  <section>
+    <h2>Contributing and help</h2>
+    <p>The repo points contributors to its quick start guide in Docs, and to the separate VM-Packages repository, where all the tool packages live, for package documentation, new package submissions, and package issues. Troubleshooting has its own document in Docs. Credits in the README name the Mandiant Red Team and Mandiant FLARE among the contributors.</p>
+    <img class="wide" src="assets/intro.png" alt="Etched introduction image for CommandoVM: a workstation armory in fine lines">
+  </section>
+
+  <footer>
+    <p>CommandoVM is an upstream Mandiant project held in my fleet. This page uses only what the repo README and License.txt state. License: Apache 2.0. Site by Gavin Blacklock.</p>
+    <p><a href="https://github.com/Epsilon0xCell/commando-vm">github.com/Epsilon0xCell/commando-vm</a></p>
+  </footer>
+</div>
+</body>
+</html>
